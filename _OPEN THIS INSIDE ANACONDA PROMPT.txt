@@ -1,0 +1,3 @@
+cd C:\Users\there\dev\ironhack\mushrooms
+
+python app.py

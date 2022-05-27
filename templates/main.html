@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Classificator</title>
+    <!-- <link rel="stylesheet" href="radio.css"> -->
+    <!-- <link rel="stylesheet" href="general.css"> -->
+    <style>
+        input[type=radio] {
+  display: none;
+}
+input[type=radio] + label svg {
+  height: 50px;
+}
+input[type=radio] + label svg .outer {
+  transition: fill 0.3s ease-in-out 0.3s;
+  fill: #BDBDBD;
+}
+input[type=radio] + label svg .inner {
+  fill: #FFFFFF;
+  transition: r 0.3s ease-in-out 0.3s;
+  r: 28px;
+}
+input[type=radio] + label:hover svg .outer {
+  fill: #9E9E9E;
+}
+input[type=radio] + label:hover svg .inner {
+  r: 17px;
+}
+input[type=radio]:checked + label svg .outer {
+  transition: fill 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  fill: #2196F3;
+}
+input[type=radio]:checked + label svg .inner {
+  transition: r 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  r: 14px;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+h3 {
+    color: #2196F3;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 36px;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+}
+
+header {
+    background-color: #2196F3;
+}
+
+h2 {
+    margin-left: 25px;
+    margin-bottom: 50px;
+    color: red;
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mushroom Classificator</h1>
+    </header>
+    
+    <h2>All Mushrooms are edible but some only once</h2>
+    <form method="POST">
+        <label for="Cap Shape">
+            <h3>Cap Shape</h3>
+            <input type="radio" name="cap-shape" value="b" id="1"required>Bell
+            <label for="1"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-shape" value="c" id="2">Conical
+            <label for="2"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-shape" value="x" id="3">Convex
+            <label for="3"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-shape" value="f" id="4">Flat
+            <label for="4"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-shape" value="k" id="5">Knobbed
+            <label for="5"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-shape" value="s" id="6">Sunken
+            <label for="6"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <br>
+        <br>
+        
+        <label for="Cap Surface">
+            <h3>Cap Surface</h3>
+            <input type="radio" name="cap-surface" value='f' required id="7">Fibrous
+            <label for="7"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-surface" value='g' id="8">Grooves
+            <label for="8"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-surface" value='y' id="9">Scaly
+            <label for="9"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-surface" value='s' id="10">Smooth
+            <label for="10"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Cap Color">
+            <h3>Cap Color</h3>
+            <input type="radio" name="cap-color" value="n" required id="11">Brown
+            <label for="11"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="b" id="12">Buff
+            <label for="12"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="c" id="13">Cinnamon
+            <label for="13"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="g" id="14">Gray
+            <label for="14"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="r" id="15">Green
+            <label for="15"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="p" id="16">Pink
+            <label for="16"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="u" id="17">Purple
+            <label for="17"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="e" id="18">Red
+            <label for="18"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="w" id="19">White
+            <label for="19"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="cap-color" value="y" id="20">Yellow
+            <label for="20"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Bruises">
+            <h3>Bruises</h3>
+            <input type="radio" name="bruises" value="t" required id="21">Bruises
+            <label for="21"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="bruises" value="f" id="22">No Bruises
+            <label for="22"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Odor">
+            <h3>Odor</h3>
+            <input type="radio" name="odor" value="a" required id="23">Almond
+            <label for="23"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="l" required id="24">Anise
+            <label for="24"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="c" required id="25">Creosote
+            <label for="25"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="y" required id="26">Fishy
+            <label for="26"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="f" required id="27">Foul
+            <label for="27"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="m" required id="28">Musty
+            <label for="28"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="n" required id="29">None
+            <label for="29"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="p" required id="30">Pungent
+            <label for="30"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="odor" value="s" required id="31">Spicy
+            <label for="31"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Gill Attachment">
+            <h3>Gill Attachment</h3>
+            <input type="radio" name="gill-attachment" value="a" required id="32">Attached
+            <label for="32"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="gill-attachment" value="d">Descending -->
+            <input type="radio" name="gill-attachment" value="f" id="33">Free
+            <label for="33"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="gill-attachment" value="n">Notched -->
+        </label>
+        <br>
+        <label for="Gill Spacing">
+            <h3>Gill Spacing</h3>
+            <input type="radio" name="gill-spacing" value="c" required id="34">Close
+            <label for="34"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-spacing" value="w" id="35">Crowded
+            <label for="35"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="gill-spacing" value="d">Distant -->
+        </label>
+        <br>
+        <label for="Gill Size">
+            <h3>Gill Size</h3>
+            <input type="radio" name="gill-size" value="b" required id="36">Broad
+            <label for="36"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-size" value="n" id="37">Narrow
+            <label for="37"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Gill Color">
+            <h3>Gill Color</h3>
+            <input type="radio" name="gill-color" value="k" required id="38">Black
+            <label for="38"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="n" id="39">Brown
+            <label for="39"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="b" id="40">Buff
+            <label for="40"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="h" id="41">Chocolate
+            <label for="41"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="g" id="42">Gray
+            <label for="42"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="r" id="43">Green
+            <label for="43"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="o" id="44">Orange
+            <label for="44"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="p" id="45">Pink
+            <label for="45"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="u" id="46">Purple
+            <label for="46"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="e" id="47">Red
+            <label for="47"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="w" id="48">White
+            <label for="48"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="gill-color" value="y" id="49">Yellow
+            <label for="49"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Shape">
+            <h3>Stalk Shape</h3>
+            <input type="radio" name="stalk-shape" value="e" required id="50">Enlarging
+            <label for="50"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-shape" value="t" id="51">Tapering
+            <label for="51"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Root">
+            <h3>Stalk Root</h3>
+            <input type="radio" name="stalk-root" value="b" required id="52">Bulbous
+            <label for="52"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-root" value="c" id="53">Club
+            <label for="53"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="stalk-root" value="u">Cup -->
+            <input type="radio" name="stalk-root" value="e" id="54">Equal
+            <label for="54"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="stalk-root" value="z">Rhizomorphs -->
+            <input type="radio" name="stalk-root" value="r" id="55">Rooted
+            <label for="55"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-root" value="?" id="56">Missing
+            <label for="56"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Surface Above Ring">
+            <h3>Stalk Surface Above Ring</h3>
+            <input type="radio" name="stalk-surface-above-ring" value="f" required id="57">Fibrous
+            <label for="57"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-above-ring" value="y" id="58">Scaly
+            <label for="58"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-above-ring" value="k" id="59">Silky
+            <label for="59"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-above-ring" value="s" id="60">Smooth
+            <label for="60"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Surface Below Ring">
+            <h3>Stalk Surface Below Ring</h3>
+            <input type="radio" name="stalk-surface-below-ring" value="y" required id="61">Scaly
+            <label for="61"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-below-ring" value="f" id="62">Fibrous
+            <label for="62"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-below-ring" value="k" id="63">Silky
+            <label for="63"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-surface-below-ring" value="s" id="64">Smooth
+            <label for="64"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Color Above Ring">
+            <h3>Stalk Color Above Ring</h3>
+            <input type="radio" name="stalk-color-above-ring" value="n" required id="65">Brown
+            <label for="65"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="b" id="66">Buff
+            <label for="66"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="c" id="67">Cinnamon
+            <label for="67"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="g" id="68">Gray
+            <label for="68"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="o" id="69">Orange
+            <label for="69"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="p" id="70">Pink
+            <label for="70"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="e" id="71">Red
+            <label for="71"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="w" id="72">White
+            <label for="72"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-above-ring" value="y" id="73">Yellow
+            <label for="73"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Stalk Color Below Ring">
+            <h3>Stalk Color Below Ring</h3>
+            <input type="radio" name="stalk-color-below-ring" value="n" required id="200">Brown
+            <label for="200"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="b" id="74">Buff
+            <label for="74"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="c" id="75">Cinnamon
+            <label for="75"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="g" id="76">Gray
+            <label for="76"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="o" id="77">Orange
+            <label for="77"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="p" id="78">Pink
+            <label for="78"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="e" id="79">Red
+            <label for="79"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="w" id="80">White
+            <label for="80"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="stalk-color-below-ring" value="y" id="81">Yellow
+            <label for="81"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Veil Type">
+            <h3>Veil Type</h3>
+            <input type="radio" name="veil-type" value="p" required id="82">Partial
+            <label for="82"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="veil-type" value="u" id="83">Universal
+            <label for="83"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Veil Color">
+            <h3>Veil Color</h3>
+            <input type="radio" name="veil-color" value="n" required id="84">Brown
+            <label for="84"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="veil-color" value="o" id="85">Orange
+            <label for="85"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="veil-color" value="w" id="86">White
+            <label for="86"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="veil-color" value="y" id="87">Yellow
+            <label for="87"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Ring Number">
+            <h3>Ring Number</h3>
+            <input type="radio" name="ring-number" value="n" required id="88">None
+            <label for="88"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-number" value="o" id="89">One
+            <label for="89"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-number" value="t" id="90">Two
+            <label for="90"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Ring Type">
+            <h3>Ring Type</h3>
+            <!-- <input type="radio" name="ring-type" value="c" required>Cobwebby -->
+            <input type="radio" name="ring-type" value="e"required id="91">Evanescent
+            <label for="91"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-type" value="f" id="92">Flaring
+            <label for="92"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-type" value="l" id="93">Large
+            <label for="93"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-type" value="n" id="94">None
+            <label for="94"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="ring-type" value="p" id="95">Pendant
+            <label for="95"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <!-- <input type="radio" name="ring-type" value="s">Sheating -->
+            <!-- <input type="radio" name="ring-type" value="z">Zone -->
+        </label>
+        <br>
+        <label for="Spore Print Color">
+            <h3>Spore Print Color</h3>
+            <input type="radio" name="spore-print-color" value="k" required id="96">Black
+            <label for="96"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="n" id="97">Brown
+            <label for="97"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="b" id="98">Buff
+            <label for="98"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="h" id="99">Chocolate
+            <label for="99"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="r" id="100">Green
+            <label for="100"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="o" id="101">Orange
+            <label for="101"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="p" id="102">Purple
+            <label for="102"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="w" id="103">White
+            <label for="103"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="spore-print-color" value="y" id="104">Yellow
+            <label for="104"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="Population">
+            <h3>Population</h3>
+            <input type="radio" name="population" value="a" required id="105">Abudant
+            <label for="105"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="population" value="c" id="106">Clustered
+            <label for="106"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="population" value="n" id="107">Numerous
+            <label for="107"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="population" value="s" id="108">Scattered
+            <label for="108"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="population" value="v" id="109">Several
+            <label for="109"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="population" value="y" id="110">Solitary
+            <label for="110"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <label for="habitat">
+            <h3>Habitat</h3>
+            <input type="radio" name="habitat" value="g" required id="111">Grasses
+            <label for="111"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="l" id="112">Leaves
+            <label for="112"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="m" id="113">Meadows
+            <label for="113"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="p" id="114">Paths
+            <label for="114"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="u" id="115">Urban
+            <label for="115"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="w" id="116">Waste
+            <label for="116"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+            <input type="radio" name="habitat" value="d" id="117">Woods
+            <label for="117"><svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="outer" fill="#BDBDBD" cx="32" cy="32" r="32"></circle>
+                <circle class="inner" fill="#FFFFFF" cx="32" cy="32" r="28"></circle>
+            </svg></label>
+        </label>
+        <br>
+        <input type="submit" value = "Run Model">
+    </form>
+
+    <h2> The Mushroom {{'teste'}} {{extra}}{{results}} </h2>
+    <h2> The Mushroom you selected is, according to the model, {{results}} </h2>
+    
+</body>
+</html>

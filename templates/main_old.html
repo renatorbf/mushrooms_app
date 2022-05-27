@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Classificator</title>
+    <!-- <link rel="stylesheet" href="radio.css"> -->
+</head>
+<body>
+    <h1>Mushroom Classificator</h1>
+    <h2>All Mushrooms are edible but some only once</h2>
+    <form method="POST">
+        <label for="Cap Shape">
+            <h3>Cap Shape</h3>
+            <input type="radio" name="cap-shape" value="b" required>Bell
+            <input type="radio" name="cap-shape" value="c">Conical
+            <input type="radio" name="cap-shape" value="x">Convex
+            <input type="radio" name="cap-shape" value="f">Flat
+            <input type="radio" name="cap-shape" value="k">Knobbed
+            <input type="radio" name="cap-shape" value="s">Sunken
+        </label>
+        <br>
+        <label for="Cap Surface">
+            <h3>Cap Surface</h3>
+            <input type="radio" name="cap-surface" value='f' required>Fibrous
+            <input type="radio" name="cap-surface" value='g'>Grooves
+            <input type="radio" name="cap-surface" value='y'>Scaly
+            <input type="radio" name="cap-surface" value='s'>Smooth
+        </label>
+        <br>
+        <label for="Cap Color">
+            <h3>Cap Color</h3>
+            <input type="radio" name="cap-color" value="n" required>Brown
+            <input type="radio" name="cap-color" value="b">Buff
+            <input type="radio" name="cap-color" value="c">Cinnamon
+            <input type="radio" name="cap-color" value="g">Gray
+            <input type="radio" name="cap-color" value="r">Green
+            <input type="radio" name="cap-color" value="p">Pink
+            <input type="radio" name="cap-color" value="u">Purple
+            <input type="radio" name="cap-color" value="e">Red
+            <input type="radio" name="cap-color" value="w">White
+            <input type="radio" name="cap-color" value="y">Yellow
+        </label>
+        <br>
+        <label for="Bruises">
+            <h3>Bruises</h3>
+            <input type="radio" name="bruises" value="t" required>Bruises
+            <input type="radio" name="bruises" value="f">No Bruises
+        </label>
+        <br>
+        <label for="Odor">
+            <h3>Odor</h3>
+            <input type="radio" name="odor" value="a" required>Almond
+            <input type="radio" name="odor" value="l" required>Anise
+            <input type="radio" name="odor" value="c" required>Creosote
+            <input type="radio" name="odor" value="y" required>Fishy
+            <input type="radio" name="odor" value="f" required>Foul
+            <input type="radio" name="odor" value="m" required>Musty
+            <input type="radio" name="odor" value="n" required>None
+            <input type="radio" name="odor" value="p" required>Pungent
+            <input type="radio" name="odor" value="s" required>Spicy
+        </label>
+        <br>
+        <label for="Gill Attachment">
+            <h3>Gill Attachment</h3>
+            <input type="radio" name="gill-attachment" value="a" required>Attached
+            <!-- <input type="radio" name="gill-attachment" value="d">Descending -->
+            <input type="radio" name="gill-attachment" value="f">Free
+            <!-- <input type="radio" name="gill-attachment" value="n">Notched -->
+        </label>
+        <br>
+        <label for="Gill Spacing">
+            <h3>Gill Spacing</h3>
+            <input type="radio" name="gill-spacing" value="c" required>Close
+            <input type="radio" name="gill-spacing" value="w">Crowded
+            <!-- <input type="radio" name="gill-spacing" value="d">Distant -->
+        </label>
+        <br>
+        <label for="Gill Size">
+            <h3>Gill Size</h3>
+            <input type="radio" name="gill-size" value="b" required>Broad
+            <input type="radio" name="gill-size" value="n">Narrow
+        </label>
+        <br>
+        <label for="Gill Color">
+            <h3>Gill Color</h3>
+            <input type="radio" name="gill-color" value="k" required>Black
+            <input type="radio" name="gill-color" value="n">Brown
+            <input type="radio" name="gill-color" value="b">Buff
+            <input type="radio" name="gill-color" value="h">Chocolate
+            <input type="radio" name="gill-color" value="g">Gray
+            <input type="radio" name="gill-color" value="r">Green
+            <input type="radio" name="gill-color" value="o">Orange
+            <input type="radio" name="gill-color" value="p">Pink
+            <input type="radio" name="gill-color" value="u">Purple
+            <input type="radio" name="gill-color" value="e">Red
+            <input type="radio" name="gill-color" value="w">White
+            <input type="radio" name="gill-color" value="y">Yellow
+        </label>
+        <br>
+        <label for="Stalk Shape">
+            <h3>Stalk Shape</h3>
+            <input type="radio" name="stalk-shape" value="e" required>Enlarging
+            <input type="radio" name="stalk-shape" value="t">Tapering
+        </label>
+        <br>
+        <label for="Stalk Root">
+            <h3>Stalk Root</h3>
+            <input type="radio" name="stalk-root" value="b" required>Bulbous
+            <input type="radio" name="stalk-root" value="c">Club
+            <!-- <input type="radio" name="stalk-root" value="u">Cup -->
+            <input type="radio" name="stalk-root" value="e">Equal
+            <!-- <input type="radio" name="stalk-root" value="z">Rhizomorphs -->
+            <input type="radio" name="stalk-root" value="r">Rooted
+            <input type="radio" name="stalk-root" value="?">Missing
+        </label>
+        <br>
+        <label for="Stalk Surface Above Ring">
+            <h3>Stalk Surface Above Ring</h3>
+            <input type="radio" name="stalk-surface-above-ring" value="f" required>Fibrous
+            <input type="radio" name="stalk-surface-above-ring" value="y">Scaly
+            <input type="radio" name="stalk-surface-above-ring" value="k">Silky
+            <input type="radio" name="stalk-surface-above-ring" value="s">Smooth
+        </label>
+        <br>
+        <label for="Stalk Surface Below Ring">
+            <h3>Stalk Surface Below Ring</h3>
+            <input type="radio" name="stalk-surface-below-ring" value="y" required>Scaly
+            <input type="radio" name="stalk-surface-below-ring" value="f">Fibrous
+            <input type="radio" name="stalk-surface-below-ring" value="k">Silky
+            <input type="radio" name="stalk-surface-below-ring" value="s">Smooth
+        </label>
+        <br>
+        <label for="Stalk Color Above Ring">
+            <h3>Stalk Color Above Ring</h3>
+            <input type="radio" name="stalk-color-above-ring" value="n" required>Brown
+            <input type="radio" name="stalk-color-above-ring" value="b">Buff
+            <input type="radio" name="stalk-color-above-ring" value="c">Cinnamon
+            <input type="radio" name="stalk-color-above-ring" value="g">Gray
+            <input type="radio" name="stalk-color-above-ring" value="o">Orange
+            <input type="radio" name="stalk-color-above-ring" value="p">Pink
+            <input type="radio" name="stalk-color-above-ring" value="e">Red
+            <input type="radio" name="stalk-color-above-ring" value="w">White
+            <input type="radio" name="stalk-color-above-ring" value="y">Yellow
+        </label>
+        <br>
+        <label for="Stalk Color Below Ring">
+            <h3>Stalk Color Below Ring</h3>
+            <input type="radio" name="stalk-color-below-ring" value="n" required>Brown
+            <input type="radio" name="stalk-color-below-ring" value="b">Buff
+            <input type="radio" name="stalk-color-below-ring" value="c">Cinnamon
+            <input type="radio" name="stalk-color-below-ring" value="g">Gray
+            <input type="radio" name="stalk-color-below-ring" value="o">Orange
+            <input type="radio" name="stalk-color-below-ring" value="p">Pink
+            <input type="radio" name="stalk-color-below-ring" value="e">Red
+            <input type="radio" name="stalk-color-below-ring" value="w">White
+            <input type="radio" name="stalk-color-below-ring" value="y">Yellow
+        </label>
+        <br>
+        <label for="Veil Type">
+            <h3>Veil Type</h3>
+            <input type="radio" name="veil-type" value="p" required>Partial
+            <input type="radio" name="veil-type" value="u">Universal
+        </label>
+        <br>
+        <label for="Veil Color">
+            <h3>Veil Color</h3>
+            <input type="radio" name="veil-color" value="n" required>Brown
+            <input type="radio" name="veil-color" value="o">Orange
+            <input type="radio" name="veil-color" value="w">White
+            <input type="radio" name="veil-color" value="y">Yellow
+        </label>
+        <br>
+        <label for="Ring Number">
+            <h3>Ring Number</h3>
+            <input type="radio" name="ring-number" value="n" required>None
+            <input type="radio" name="ring-number" value="o">One
+            <input type="radio" name="ring-number" value="t">Two
+        </label>
+        <br>
+        <label for="Ring Type">
+            <h3>Ring Type</h3>
+            <!-- <input type="radio" name="ring-type" value="c" required>Cobwebby -->
+            <input type="radio" name="ring-type" value="e"required>Evanescent
+            <input type="radio" name="ring-type" value="f">Flaring
+            <input type="radio" name="ring-type" value="l">Large
+            <input type="radio" name="ring-type" value="n">None
+            <input type="radio" name="ring-type" value="p">Pendant
+            <!-- <input type="radio" name="ring-type" value="s">Sheating -->
+            <!-- <input type="radio" name="ring-type" value="z">Zone -->
+        </label>
+        <br>
+        <label for="Spore Print Color">
+            <h3>Spore Print Color</h3>
+            <input type="radio" name="spore-print-color" value="k" required>Black
+            <input type="radio" name="spore-print-color" value="n">Brown
+            <input type="radio" name="spore-print-color" value="b">Buff
+            <input type="radio" name="spore-print-color" value="h">Chocolate
+            <input type="radio" name="spore-print-color" value="r">Green
+            <input type="radio" name="spore-print-color" value="o">Orange
+            <input type="radio" name="spore-print-color" value="p">Purple
+            <input type="radio" name="spore-print-color" value="w">White
+            <input type="radio" name="spore-print-color" value="y">Yellow
+        </label>
+        <br>
+        <label for="Population">
+            <h3>Population</h3>
+            <input type="radio" name="population" value="a" required>Abudant
+            <input type="radio" name="population" value="c">Clustered
+            <input type="radio" name="population" value="n">Numerous
+            <input type="radio" name="population" value="s">Scattered
+            <input type="radio" name="population" value="v">Several
+            <input type="radio" name="population" value="y">Solitary
+        </label>
+        <br>
+        <label for="habitat">
+            <h3>Habitat</h3>
+            <input type="radio" name="habitat" value="g" required>Grasses
+            <input type="radio" name="habitat" value="l">Leaves
+            <input type="radio" name="habitat" value="m">Meadows
+            <input type="radio" name="habitat" value="p">Paths
+            <input type="radio" name="habitat" value="u">Urban
+            <input type="radio" name="habitat" value="w">Waste
+            <input type="radio" name="habitat" value="d">Woods
+        </label>
+        <br>
+        <input type="submit" value = "Run Model">
+    </form>
+
+    <h2> The Mushroom you selected is, according to the model, {{results}} </h2>
+
+    
+</body>
+</html>

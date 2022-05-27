@@ -1,0 +1,40 @@
+input[type=radio] {
+  display: none;
+}
+input[type=radio] + label svg {
+  height: 200px;
+}
+input[type=radio] + label svg .outer {
+  transition: fill 0.3s ease-in-out 0.3s;
+  fill: #BDBDBD;
+}
+input[type=radio] + label svg .inner {
+  fill: #FFFFFF;
+  transition: r 0.3s ease-in-out 0.3s;
+  r: 28px;
+}
+input[type=radio] + label:hover svg .outer {
+  fill: #9E9E9E;
+}
+input[type=radio] + label:hover svg .inner {
+  r: 17px;
+}
+input[type=radio]:checked + label svg .outer {
+  transition: fill 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  fill: #2196F3;
+}
+input[type=radio]:checked + label svg .inner {
+  transition: r 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  r: 14px;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
